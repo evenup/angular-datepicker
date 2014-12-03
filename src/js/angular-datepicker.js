@@ -216,14 +216,21 @@
           }
         };
 
-        $scope.showCalendar = function manageShowCalendar() {
+         $scope.showCalendar = function manageShowCalendar() {
 
-          theCalendar.classList.add('datepicker-open');
+          var classString = theCalendar.className; // returns the string of all the classes for theCalendar
+          if ( !/datepicker\-open/.test(classString) ) { // Ensure we don't add the class twice
+            classString = classString.concat(' datepicker-open');
+          }
+          theCalendar.className = classString;
         };
 
         $scope.hideCalendar = function manageHideCalendar() {
 
-          theCalendar.classList.remove('datepicker-open');
+          var classString = theCalendar.className;
+          classString = classString.replace(/datepicker\-open/g, ''); // Remove the datepicker-open class
+          classString = classString.replace(/\s{2,}/g, ' '); // Replace double spaces with single ones
+          theCalendar.className = classString;
         };
 
         $scope.setDaysInMonth = function setDaysInMonth(month, year) {
