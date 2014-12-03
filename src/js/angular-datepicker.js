@@ -35,7 +35,7 @@
           '<a href="javascript:void(0)" ng-click="prevMonth()" ng-class="{hidden: !isPrevMonth}">' + prevButton + '</a>' +
           '</div>' +
           '<div class="datepicker-calendar-header-middle datepicker-calendar-month">' +
-          '{{month}} <a href="javascript:void(0)" ng-click="showYearsPagination = !showYearsPagination"><span>{{year}} <i ng-if="!showYearsPagination">&dtrif;</i> <i ng-if="showYearsPagination">&urtri;</i> </span> </a>' +
+          '{{month}} <a href="javascript:void(0)" ng-click="showYearsPagination = !showYearsPagination"><span>{{year}} <i ng-if="!showYearsPagination"></i> <i ng-if="showYearsPagination"></i> </span> </a>' +
           '</div>' +
           '<div class="datepicker-calendar-header-right">' +
           '<a href="javascript:void(0)" ng-click="nextMonth()" ng-class="{hidden: !isNextMonth}">' + nextButton + '</a>' +
