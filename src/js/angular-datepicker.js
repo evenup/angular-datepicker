@@ -174,6 +174,7 @@
         };
 
         $scope.checkNextPrevMonth = function manageNextPrevMonth() {
+          // If next month is newer than the max date, no next month
           if (!!dateMaxLimit  && !!new Date(dateMaxLimit)) {
             if (new Date($scope.year, $scope.monthNumber, 0) < new Date(dateMaxLimit)) {
               $scope.isNextMonth = true;
@@ -182,8 +183,9 @@
             }
           }
 
-          if (!!dateMaxLimit  && !!new Date(dateMaxLimit)) {
-            if (new Date($scope.year, $scope.monthNumber, 1) <= new Date(dateMinLimit)) {
+          // If last month is older than the minimum date, no previous month
+          if (!!dateMinLimit  && !!new Date(dateMinLimit)) {
+            if (new Date($scope.year, $scope.monthNumber - 1, 0) > new Date(dateMinLimit)) {
               $scope.isPrevMonth = true;
             } else {
               $scope.isPrevMonth = false;
